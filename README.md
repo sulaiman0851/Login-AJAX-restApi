@@ -21,6 +21,7 @@ Proyek ini adalah halaman login sederhana yang menggunakan **AJAX**, **mock REST
 ```
 📁 project-folder/
  ├── 📄 index.html   # Halaman utama login
+ ├── 📄 LICENSE   # Lisensi MIT
  ├── 📄 README.md    # Dokumentasi ini
  ├── 📄 script.js    # Script JavaScript
  ├── 📄 style.css    # File CSS untuk Styling
