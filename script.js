@@ -1,46 +1,27 @@
-const loginForm = document.getElementById("loginForm");
-const errorMessage = document.getElementById("errorMessage");
+// function login() {
+//   const username = document.getElementById("username").value;
+//   const password = document.getElementById("password").value;
 
-// Mock API URL (Ganti dengan URL JSON Anda di GitHub)
-const MOCK_API_URL =
-  "https://raw.githubusercontent.com/sulaiman0851/database-json-script-bot-WhatApp/refs/heads/main/json/users.json";
+//   // Ganti URL ini dengan link raw JSON GitHub lu
+//   const jsonUrl =
+//     "https://raw.githubusercontent.com/sulaiman0851/database-json-script-bot-WhatApp/refs/heads/main/json/users.json";
 
-loginForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  errorMessage.style.display = "none";
+//   fetch(jsonUrl)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const users = data.users;
+//       const user = users.find(
+//         (user) => user.username === username && user.password === password
+//       );
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  try {
-    // AJAX request ke Mock API
-    const response = await fetch(MOCK_API_URL);
-
-    if (!response.ok) {
-      throw new Error("Gagal mengambil data dari server!");
-    }
-
-    const data = await response.json();
-    const users = data.users; // Sesuai struktur JSON yang diberikan
-
-    // Cek kredensial
-    const user = users.find(
-      (u) => u.username === username && u.password === password
-    );
-
-    if (user) {
-      // Simulasi login berhasil
-      alert(`Login berhasil! Selamat datang, ${user.username}`);
-      window.location.href = "/dashboard";
-    } else {
-      showError("Username atau password salah!");
-    }
-  } catch (error) {
-    showError(error.message || "Gagal mengambil data dari server!");
-  }
-});
-
-function showError(message) {
-  errorMessage.textContent = message;
-  errorMessage.style.display = "block";
-}
+//       if (user) {
+//         document.getElementById("message").innerText = "Login berhasil!";
+//         document.getElementById("message").style.color = "green";
+//       } else {
+//         document.getElementById("message").innerText =
+//           "Username atau password salah!";
+//         document.getElementById("message").style.color = "red";
+//       }
+//     })
+//     .catch((error) => console.error("Error:", error));
+// }
